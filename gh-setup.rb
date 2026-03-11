@@ -5,15 +5,15 @@
 class GhSetup < Formula
   desc "A CLI tool that declaratively configures GitHub accounts, repositories, branch protection, teams, labels, CI, and governance from a YAML config file."
   homepage "https://github.com/amenophis1er/gh-setup"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   depends_on "gh" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/amenophis1er/gh-setup/releases/download/v0.1.2/gh-setup_darwin_amd64.tar.gz"
-      sha256 "7de154da7a4b326dc4e13d49f8512f94473167e559f77fe3b67c694e028b40b0"
+      url "https://github.com/amenophis1er/gh-setup/releases/download/v0.1.3/gh-setup_darwin_amd64.tar.gz"
+      sha256 "f0e73eab454f1888267ac0785b1ed1ebb1dfea85b11c29913c9d4b3c95007baf"
 
       define_method(:install) do
         bin.install "gh-setup"
@@ -21,8 +21,8 @@ class GhSetup < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/amenophis1er/gh-setup/releases/download/v0.1.2/gh-setup_darwin_arm64.tar.gz"
-      sha256 "ffbb048de05938bea76fa5d6e4dbbfea4f7bb34d6d9f28a70215533c6a69208b"
+      url "https://github.com/amenophis1er/gh-setup/releases/download/v0.1.3/gh-setup_darwin_arm64.tar.gz"
+      sha256 "726b6e4cba45d41aaa8f12befd0f2d0d1daf74873125cc7a3bfb5a1c75cd1b1b"
 
       define_method(:install) do
         bin.install "gh-setup"
@@ -33,16 +33,16 @@ class GhSetup < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/amenophis1er/gh-setup/releases/download/v0.1.2/gh-setup_linux_amd64.tar.gz"
-      sha256 "084a421c8de0154fa10d30a8fe22207f5d2e533c9e156aabcf9a85bbc6531097"
+      url "https://github.com/amenophis1er/gh-setup/releases/download/v0.1.3/gh-setup_linux_amd64.tar.gz"
+      sha256 "b769fbb7c93e100769feb4b9bb3355a5c1e5003818cb08415f862bd5c760ed7f"
       define_method(:install) do
         bin.install "gh-setup"
         generate_completions_from_executable(bin/"gh-setup", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/amenophis1er/gh-setup/releases/download/v0.1.2/gh-setup_linux_arm64.tar.gz"
-      sha256 "8375a15d348e5ee8e3a4973af1ff2f8ba8907c4adc4e132b87ff7d34966a5ddf"
+      url "https://github.com/amenophis1er/gh-setup/releases/download/v0.1.3/gh-setup_linux_arm64.tar.gz"
+      sha256 "756244fe33b849d8a83983c45749d7a989cd4c9e040551386d7d175dc71dfc2b"
       define_method(:install) do
         bin.install "gh-setup"
         generate_completions_from_executable(bin/"gh-setup", "completion")
